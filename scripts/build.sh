@@ -1,2 +1,2 @@
-go build -o output/fs cmd/fs/fs.go
-go build -o output/fsd cmd/fsd/fsd.go
+go build -o output/fscli cmd/fscli/fscli.go
+go build -o output/fscat cmd/fscat/fscat.go
