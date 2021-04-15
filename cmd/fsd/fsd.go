@@ -59,7 +59,8 @@ func startServer() {
 	http.HandleFunc("/upload", uploadFile)
 
 	addr := fmt.Sprintf("localhost:%d", *port)
-	log.Printf("Listening on %s", addr)
+	log.Printf("Listening on http://%s", addr)
+	log.Printf("Upload route: http://%s", addr+"/upload")
 	err := http.ListenAndServe(addr, nil)
 	log.Fatal(err)
 }
