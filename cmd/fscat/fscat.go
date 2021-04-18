@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/joeyscat/file-sync/internal/fscat"
 	"io"
 	"log"
 	"net/http"
@@ -15,10 +16,14 @@ var port = flag.Int("p", 8001, "server port")
 // TODO daemon
 
 func main() {
-	flag.Parse()
-	log.Printf("path for upload file: %s", *up)
+	//flag.Parse()
+	//log.Printf("path for upload file: %s", *up)
 
-	startServer()
+	//startServer()
+	err := fscat.Exec()
+	if err != nil {
+		log.Fatal(err)
+	}
 }
 
 func uploadFile(w http.ResponseWriter, r *http.Request) {
